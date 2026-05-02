@@ -93,18 +93,68 @@ for (let ronda = 1; ronda <= 5; ronda++) {
 
 console.log(puntajeTotal);
 
-// Arrays
 
 import { inventario } from "./data.js";
 
-// Primer objeto
 console.log("Primer objeto:", inventario[0]);
 
-// Último objeto
 console.log("Último objeto:", inventario[inventario.length - 1]);
 
-// Cantidad total
 console.log("Cantidad de objetos:", inventario.length);
 
-//
+// Recorrer inventario
 
+const inventario = ["espada", "poción", "llave", "escudo"];
+
+for (let i = 0; i < inventario.length; i++) {
+  console.log(inventario[i]);
+}
+
+// Agregar inventario
+
+let mochila = [];
+
+mochila.push("linterna");
+mochila.push("comida");
+mochila.push("mapa");
+
+mochila.pop();
+
+console.log(mochila);
+
+
+// Chequear inventario
+let inventario = ["espada", "poción", "llave", "escudo"];
+
+if (inventario.includes("llave")) {
+  console.log("La puerta se abre");
+} else {
+  console.log("Necesitás una llave");
+}
+
+//  Saludar usuario
+
+function saludarUsuario(nombre) {
+  console.log("Bienvenido/a, " + nombre);
+}
+
+saludarUsuario("Milo");
+
+// Calculr daño a la vida
+
+function calcularVidaRestante(vida, danio) {
+  return vida - danio;
+}
+
+let resultado = calcularVidaRestante(100, 30);
+console.log(resultado);
+
+// Arrow
+
+const sumar = (a, b) => {
+  return a + b;
+};
+
+console.log(sumar(10, 5));
+
+// 
