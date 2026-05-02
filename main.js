@@ -157,4 +157,122 @@ const sumar = (a, b) => {
 
 console.log(sumar(10, 5));
 
-// 
+// Crear objeto jugador
+
+const jugador = {
+  nombre: "Luna",
+  vida: 100,
+  energia: 80,
+  nivel: 1,
+  inventario: ["espada", "poción"]
+};
+
+console.log("Nombre:", jugador.nombre);
+console.log("Vida:", jugador.vida);
+console.log("Energía:", jugador.energia);
+console.log("Nivel:", jugador.nivel);
+console.log("Inventario:", jugador.inventario);
+
+// Modificar objeto
+
+const jugador = {
+  nombre: "Kai",
+  nivel: 1,
+  monedas: 0
+};
+
+jugador.nivel += 1;
+
+jugador.monedas += 50;
+
+console.log(jugador);
+
+
+// Array de objetos
+
+import { personajes } from "./data.js";
+
+for (let i = 0; i < personajes.length; i++) {
+  const p = personajes[i];
+  console.log(`${p.nombre} es un/a ${p.tipo}, nivel ${p.nivel} con ${p.vida} de vida.`);
+}
+
+// Filtrar personajes por nivel
+
+import { personajes } from "./data.js";
+
+const personajesFuertes = personajes.filter((personaje) => {
+  return personaje.nivel >= 3;
+});
+
+console.log(personajesFuertes);
+
+// Obtener solo los nombres
+
+import { personajes } from "./data.js";
+
+const nombres = personajes.map((personaje) => {
+  return personaje.nombre;
+});
+
+console.log(nombres);
+
+// Buscar un personaje
+
+import { personajes } from "./data.js";
+
+const personajeEncontrado = personajes.find((personaje) => {
+  return personaje.nombre === "Kai";
+});
+
+console.log(personajeEncontrado);
+
+//  Msj en html
+const mensaje = document.getElementById("mensaje");
+
+mensaje.textContent = "Bienvenido a la guía de JavaScript";
+
+// Botón que suma puntos
+
+const boton = document.getElementById("btn");
+const mensaje = document.getElementById("mensaje");
+
+let puntos = 0;
+
+boton.addEventListener("click", function () {
+
+  puntos += 10;
+
+  mensaje.textContent = "Puntaje: " + puntos;
+});
+
+// Validar nombre de usuario
+
+const input = document.getElementById("dato");
+const boton = document.getElementById("btn");
+const mensaje = document.getElementById("mensaje");
+
+boton.addEventListener("click", function () {
+  const nombre = input.value;
+
+  if (nombre === "") {
+    mensaje.textContent = "Ingresá un nombre para continuar";
+  } else {
+    mensaje.textContent = "Bienvenido/a, " + nombre;
+  }
+});
+
+//  Puntaje local store
+
+const jugador = {
+  nombre: "Luna",
+  puntaje: 1500
+};
+
+localStorage.setItem("jugador", JSON.stringify(jugador));
+
+const jugadorGuardado = JSON.parse(localStorage.getItem("jugador"));
+
+console.log(jugadorGuardado);
+
+//
